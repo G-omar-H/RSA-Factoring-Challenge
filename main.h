@@ -5,6 +5,6 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-void factorize(int key);
+void factorize(long long int key);
 
 #endif /*MAIN_H*/

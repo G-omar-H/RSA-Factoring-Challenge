@@ -7,7 +7,8 @@
 */
 int main(int ac, char **av)
 {
-	int key, fd;
+	long long int key; 
+	int fd;
 	char *buff = NULL;
 	ssize_t n = 0;
 	FILE *stream;
@@ -21,7 +22,7 @@ int main(int ac, char **av)
 	stream = fdopen(fd, "r");
 	while (getline(&buff, &n, stream) != -1)
 	{
-		key = atoi(buff);
+		key = atoll(buff);
 		factorize(key);
 	}
 }

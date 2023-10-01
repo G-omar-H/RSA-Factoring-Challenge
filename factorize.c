@@ -4,21 +4,23 @@
  * @key: number to factorize
  * return: void.
  */
-void factorize(int key)
+void factorize(long long int key)
 {
-	int num1 = 0, num2 = 0;
+	long long  int num1 = 1, num2 = 1;
 
-	for (num1 = 0; num1 < key; num1++)
+	for (num1 = 1; num1 < key; num1++)
 	{
-			for (num2 = 0; num2 < key; num2++)
+		if (key % num1 == 0)
+		{
+			for (num2 = 1; num2 < key; num2++)
 			{
 				if (num1 * num2 == key)
 				{
-					fprintf(stdout, "%d=%d*%d\n", key, num1, num2);
+					fprintf(stdout, "%lli=%lli*%lli\n", key, num1, num2);
 					fflush(stdout);
 					return;
 				}
 			}
-	
+		}
 	}
 }
